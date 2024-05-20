@@ -1,0 +1,458 @@
+@font-face {
+    font-family: 'Abel';
+    src: url(../fonts/Abel/Abel-Regular.ttf);
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fredoka';
+    src: url(../fonts/Fredoka/Fredoka-VariableFont_wdth\,wght.ttf);
+    font-display: swap;
+}
+
+:root {
+
+    /* Colores */
+
+    --light-clr: #fff;
+    --dark-clr: #b08968;
+    --bg-clr: #6c584c;
+
+    /* Tamaños Fuentes */
+
+    --fs-big: 50px;
+    --fs-large: 32px;
+    --fs-medium: 24px;
+    --fs-small: 18px;
+    --fs-mini: 12px;
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+}
+
+.page_start {
+    background-image: url("../images/Cafeteria1.png");
+    background-repeat: no-repeat;
+    background-position: 20% 20%;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 25px;
+    position: relative;
+}
+
+.page_start>*,
+.main_wrapper>* {
+    max-width: 1200px;
+}
+
+.page_start__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100;
+    z-index: 4;
+    backdrop-filter: blur(5px);
+}
+
+.header__logo p {
+    color: white;
+    font-size: var(--fs-large);
+    font-family: 'Fredoka';
+    font-weight: bold;
+    margin: 0;
+}
+
+.header__nav_list {
+    display: flex;
+    gap: 30px;
+}
+
+.header__nav_list_item {
+    list-style: none;
+}
+
+.header__nav_list_item a,
+.header__ordenar {
+    text-decoration: none;
+    color: white;
+    font-size: var(--fs-medium);
+    font-family: 'Fredoka';
+}
+
+.page_start__content {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-family: 'Abel';
+}
+
+.page_start__content__text * {
+    margin: 0;
+}
+
+.page_start__content__text h2 {
+    font-weight: normal;
+    font-size: 60px;
+    color: var(--light-clr);
+}
+
+h1 {
+    font-size: 100px;
+    color: var(--light-clr);
+    font-weight: normal;
+}
+
+.page_start__content__img_container {
+    max-width: 400px;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    object-position: center;
+    border-radius: 50px;
+    width: 100%;
+}
+
+.main_wrapper {
+    background-color: var(--bg-clr);
+    background-color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main_wrapper main {
+    padding: 0 40px;
+}
+
+
+
+main h2 {
+    font-family: 'Abel';
+    text-align: center;
+    color: var(--light-clr);
+    font-size: var(--fs-big);
+    margin: 0;
+    padding: 40px 0;
+}
+
+.menu__items_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.menu__category {
+    padding: 10px;
+}
+
+.menu__category__title {
+    text-align: center;
+    font-size: var(--fs-large);
+    font-family: 'Abel';
+    color: var(--light-clr);
+}
+
+.menu__category__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    gap: 25px;
+}
+
+#cafe {
+    grid-template-areas:
+        "uno dos"
+        "uno dos"
+        "tres tres"
+        "cuatro cuatro"
+    ;
+}
+
+#te {
+    grid-template-areas:
+        "uno uno"
+        "dos dos"
+        "tres cuatro"
+        "tres cuatro"
+    ;
+}
+
+#reposteria {
+    grid-template-areas:
+        "uno uno"
+        "dos tres"
+        "dos tres"
+        "cuatro cuatro"
+    ;
+}
+
+#desayunos {
+    grid-template-areas:
+        "uno uno"
+        "dos dos"
+        "tres tres"
+        "cuatro cuatro"
+    ;
+}
+
+
+.menu__category__food {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    border-radius: 15px;
+    font-family: "Abel";
+    font-size: var(--fs-medium);
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: show;
+    animation-range: entry 20% cover 40%;
+    animation-fill-mode: both;
+}
+
+.menu__category__food h4,
+.menu__category__food span {
+    background-color: rgba(255, 255, 255, .15);
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
+    color: black;
+}
+
+.menu__category__grid .menu__category__food:nth-child(1) {
+    grid-area: uno;
+
+}
+
+.menu__category__grid .menu__category__food:nth-child(2) {
+    grid-area: dos;
+
+}
+
+.menu__category__grid .menu__category__food:nth-child(3) {
+
+    grid-area: tres;
+}
+
+.menu__category__grid .menu__category__food:nth-child(4) {
+    grid-area: cuatro;
+}
+
+.nosotros {
+    text-align: center;
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.nosotros>div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 50px;
+    justify-items: center;
+}
+
+.nosotros>.equipo .nosotros__content {
+    order: 1;
+}
+
+.nosotros h4 {
+    font-size: var(--fs-medium);
+    font-family: 'Abel';
+    max-width: 300px;
+}
+
+.nosotros p {
+    font-size: var(--fs-small);
+    font-family: 'Abel';
+    max-width: 300px;
+
+}
+
+.ubicacion__grid {
+    color: white;
+    font-family: 'Abel';
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+}
+
+.ubicacion__grid h3 {
+    font-size: var(--fs-medium);
+}
+
+.ubicacion__grid p {
+    font-size: var(--fs-small);
+}
+
+.map_container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.galery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.galery__col {
+    display: grid;
+    gap: 20px;
+}
+
+.galery__col img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.opiniones__cards_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    color: white;
+    font-family: 'Abel';
+}
+
+.opinion__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    box-shadow: 5px 5px 0 #fff;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+.opinion__card p {
+    grid-column: 2 span;
+}
+
+.contacto {
+    color: white;
+    font-family: 'Abel';
+}
+
+.contacto p {
+    font-size: var(--fs-medium);
+    text-align: center;
+}
+
+footer {
+    border-top: 3px solid white;
+    color: white;
+    font-family: 'Abel';
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+}
+
+footer h3 {
+    font-size: var(--fs-medium);
+}
+
+footer ul {
+    padding: 0;
+}
+
+footer li {
+    list-style: none;
+    padding: 0;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .page_start__content {
+        justify-content: center;
+    }
+
+    .page_start__content__text {
+        text-align: center;
+    }
+
+    .menu__items_container {
+        grid-template-columns: 1fr;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .page_start__content {
+        flex-direction: column;
+    }
+
+    .page_start__content h1 {
+        font-size: 75px;
+    }
+
+    .page_start__content h2 {
+        font-size: 35px;
+    }
+
+    .nosotros>div {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros>.equipo .nosotros__content {
+        order: 0;
+    }
+
+    .ubicacion__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .galery {
+        grid-template-columns: 1fr;
+    }
+
+    .opiniones__cards_container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@keyframes show {
+    from {
+        transform: translateY(200%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
